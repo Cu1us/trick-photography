@@ -1,6 +1,9 @@
 # Visual Studio 2015 user specific files
 .vs/
 
+# This project only
+/.vscode
+
 # Compiled Object files
 *.slo
 *.lo
