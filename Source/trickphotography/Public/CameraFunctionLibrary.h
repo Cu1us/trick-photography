@@ -16,7 +16,7 @@ class TRICKPHOTOGRAPHY_API UCameraFunctionLibrary : public UBlueprintFunctionLib
 
 public:
 
-	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Convert Render Target to Texture", Keywords = "Texture" Category = "Custom functions"))
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Convert Render Target to Texture", Keywords = "Texture", Category = "Custom functions"))
 	static UTexture2D* ConvertRenderTargetToTexture(UTextureRenderTarget2D* InputRenderTarget);
 
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Int Test Function", Category = "Custom functions"))
