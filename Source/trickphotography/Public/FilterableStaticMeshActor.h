@@ -38,11 +38,17 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Materials\|X-Ray")
 	FilterVisibility XrayInteraction;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Materials\|X-Ray")
+	UMaterialInterface *XrayMaterial;
 
-	void OnPhotoFinished_Implementation() override;
+	void OnAnyPhoto_Implementation() override;
+	void OnAnyPhotoFinished_Implementation() override;
 	void OnThermalPhoto_Implementation() override;
+	void OnThermalPhotoFinished_Implementation() override;
 	void OnUVPhoto_Implementation() override;
+	void OnUVPhotoFinished_Implementation() override;
 	void OnXrayPhoto_Implementation() override;
+	void OnXrayPhotoFinished_Implementation() override;
 
 private:
 	bool HiddenDueToFilterSetting;

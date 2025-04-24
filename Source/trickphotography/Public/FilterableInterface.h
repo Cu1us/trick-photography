@@ -22,14 +22,25 @@ class TRICKPHOTOGRAPHY_API IFilterableInterface
 
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Filter Interaction")
+	void OnAnyPhoto();
     UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Filter Interaction")
-	void OnPhotoFinished();
+	void OnAnyPhotoFinished();
+
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Filter Interaction")
 	void OnThermalPhoto();
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Filter Interaction")
+	void OnThermalPhotoFinished();
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Filter Interaction")
 	void OnUVPhoto();
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Filter Interaction")
+	void OnUVPhotoFinished();
+	
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Filter Interaction")
 	void OnXrayPhoto();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Filter Interaction")
+	void OnXrayPhotoFinished();
 
 public:
 	FString GetInterfaceName();
