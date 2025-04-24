@@ -10,6 +10,6 @@ public class trickphotographyEditorTarget : TargetRules
 		Type = TargetType.Editor;
 		DefaultBuildSettings = BuildSettingsVersion.V5;
 
-		ExtraModuleNames.AddRange( new string[] { "trickphotography" } );
+		ExtraModuleNames.AddRange( new string[] { "trickphotographyEditor", "trickphotography" } );
 	}
 }
