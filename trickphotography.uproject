@@ -3,6 +3,21 @@
 	"EngineAssociation": "5.5",
 	"Category": "",
 	"Description": "",
+	"Modules": [
+		{
+			"Name": "trickphotography",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
+		},
+		{
+            "Name": "trickphotographyEditor",
+            "Type": "Editor",
+            "LoadingPhase":  "PostEngineInit"
+        }
+	],
 	"Plugins": [
 		{
 			"Name": "ModelingToolsEditorMode",
