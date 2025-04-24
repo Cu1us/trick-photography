@@ -18,7 +18,6 @@ enum class FilterVisibility : uint8
 	Unaffected UMETA(DisplayName = "Unaffected")
 };
 
-
 UCLASS()
 class TRICKPHOTOGRAPHY_API AFilterableStaticMeshActor : public AStaticMeshActor, public IFilterableInterface
 {
@@ -27,14 +26,24 @@ class TRICKPHOTOGRAPHY_API AFilterableStaticMeshActor : public AStaticMeshActor,
 public:
 	virtual void BeginPlay() override;
 
-	UMaterialInterface* DefaultMaterial;
+	UMaterialInterface *DefaultMaterial;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Filter Interaction")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Materials\|Thermal")
 	FilterVisibility ThermalInteraction;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Filter Interaction")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Materials\|Thermal")
 	UMaterialInterface *ThermalMaterial;
 
-	void OnThermalPhoto_Implementation() override;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Materials\|UV")
+	FilterVisibility UVInteraction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Materials\|X-Ray")
+	FilterVisibility XrayInteraction;
 
 	void OnPhotoFinished_Implementation() override;
+	void OnThermalPhoto_Implementation() override;
+	void OnUVPhoto_Implementation() override;
+	void OnXrayPhoto_Implementation() override;
+
+private:
+	bool HiddenDueToFilterSetting;
 };
