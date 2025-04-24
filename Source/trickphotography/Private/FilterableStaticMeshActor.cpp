@@ -8,27 +8,12 @@
 // }
 
 
-
-AFilterableStaticMeshActor::AFilterableStaticMeshActor(const FObjectInitializer &ObjectInitializer) : Super(ObjectInitializer)
-{
-    UE_LOG(LogTemp, Warning, TEXT("Created!!!!! "));
-    PrimaryActorTick.bCanEverTick = true;
-}
-
 void AFilterableStaticMeshActor::BeginPlay()
 {
     Super::BeginPlay();
     UE_LOG(LogTemp, Warning, TEXT("Began play!!!!!!!!"));
 
     DefaultMaterial = GetStaticMeshComponent()->GetMaterial(0);
-}
-
-void AFilterableStaticMeshActor::Tick(float DeltaSeconds)
-{
-    Super::Tick(DeltaSeconds);
-
-    UE_LOG(LogTemp, Warning, TEXT("Ticking!!!"));
-    GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("literally ticking rn"));
 }
 
 void AFilterableStaticMeshActor::OnThermalPhoto_Implementation() {

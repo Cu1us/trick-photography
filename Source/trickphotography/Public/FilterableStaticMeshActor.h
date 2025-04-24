@@ -4,19 +4,28 @@
 
 #include "CoreMinimal.h"
 #include "Engine/StaticMeshActor.h"
+#include "FilterableInterface.h"
 #include "FilterableStaticMeshActor.generated.h"
 
 /**
  *
  */
+UENUM(Blueprintable, BlueprintType)
+enum class FilterVisibility : uint8
+{
+	Visible UMETA(DisplayName = "Visible"),
+	Hidden UMETA(DisplayName = "Hidden"),
+	Unaffected UMETA(DisplayName = "Unaffected")
+};
+
+
 UCLASS()
-class TRICKPHOTOGRAPHY_API AFilterableStaticMeshActor : public AStaticMeshActor
+class TRICKPHOTOGRAPHY_API AFilterableStaticMeshActor : public AStaticMeshActor, public IFilterableInterface
 {
 	GENERATED_BODY()
 
 public:
 	virtual void BeginPlay() override;
-	virtual void Tick(float DeltaSeconds) override;
 
 	UMaterialInterface* DefaultMaterial;
 
@@ -25,19 +34,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Filter Interaction")
 	UMaterialInterface *ThermalMaterial;
 
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Filter Interaction")
-	void OnThermalPhoto();
-	void OnThermalPhoto_Implementation();
+	void OnThermalPhoto_Implementation() override;
 
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Filter Interaction")
-	void OnPhotoFinished();
-	void OnPhotoFinished_Implementation();
-};
-
-UENUM(BlueprintType)
-enum class FilterVisibility : uint8
-{
-	Visible UMETA(DisplayName = "Visible"),
-	Hidden UMETA(DisplayName = "Hidden"),
-	Unaffected UMETA(DisplayName = "Unaffected")
+	void OnPhotoFinished_Implementation() override;
 };
