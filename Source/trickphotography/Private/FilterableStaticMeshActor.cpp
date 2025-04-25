@@ -67,7 +67,7 @@ void AFilterableStaticMeshActor::OnUVPhoto_Implementation()
     switch (UVInteraction)
     {
     case FilterVisibility::Visible:
-        GetStaticMeshComponent()->SetVisibility(true);
+        //GetStaticMeshComponent()->SetVisibility(true);
         break;
     case FilterVisibility::Hidden:
         GetStaticMeshComponent()->SetVisibility(false);
@@ -81,7 +81,7 @@ void AFilterableStaticMeshActor::OnUVPhotoFinished_Implementation()
     switch (UVInteraction)
     {
         case FilterVisibility::Visible:
-        GetStaticMeshComponent()->SetVisibility(false);
+        //GetStaticMeshComponent()->SetVisibility(false);
         break;
     case FilterVisibility::Hidden:
         GetStaticMeshComponent()->SetVisibility(true);
