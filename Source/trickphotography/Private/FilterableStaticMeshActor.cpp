@@ -10,22 +10,9 @@
 void AFilterableStaticMeshActor::BeginPlay()
 {
     Super::BeginPlay();
-    UE_LOG(LogTemp, Warning, TEXT("Began play!!!!!!!!"));
 
     HiddenDueToFilterSetting = false;
     DefaultMaterial = GetStaticMeshComponent()->GetMaterial(0);
-
-    switch (UVInteraction)
-    {
-        case FilterVisibility::Visible:
-        GetStaticMeshComponent()->SetVisibility(false);
-        break;
-    case FilterVisibility::Hidden:
-        GetStaticMeshComponent()->SetVisibility(true);
-        break;
-    default:
-        break;
-    }
 }
 
 // Any
@@ -34,9 +21,6 @@ void AFilterableStaticMeshActor::OnAnyPhoto_Implementation()
 }
 void AFilterableStaticMeshActor::OnAnyPhotoFinished_Implementation()
 {
-    UE_LOG(LogTemp, Warning, TEXT("Photo finished!!!"));
-    GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("photo finished rn"));
-
     switch (ThermalInteraction)
     {
     case FilterVisibility::Visible:
@@ -57,9 +41,6 @@ void AFilterableStaticMeshActor::OnAnyPhotoFinished_Implementation()
 // Thermal
 void AFilterableStaticMeshActor::OnThermalPhoto_Implementation()
 {
-    UE_LOG(LogTemp, Warning, TEXT("Taking thermal photo!!!"));
-    GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("taking thermal photo rn"));
-
     switch (ThermalInteraction)
     {
     case FilterVisibility::Visible:
@@ -83,13 +64,10 @@ void AFilterableStaticMeshActor::OnThermalPhotoFinished_Implementation()
 // UV
 void AFilterableStaticMeshActor::OnUVPhoto_Implementation()
 {
-    UE_LOG(LogTemp, Warning, TEXT("Taking uv photo!!!"));
-    GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("taking uv photo rn"));
-
     switch (UVInteraction)
     {
     case FilterVisibility::Visible:
-        GetStaticMeshComponent()->SetVisibility(true);
+        //GetStaticMeshComponent()->SetVisibility(true);
         break;
     case FilterVisibility::Hidden:
         GetStaticMeshComponent()->SetVisibility(false);
@@ -103,7 +81,7 @@ void AFilterableStaticMeshActor::OnUVPhotoFinished_Implementation()
     switch (UVInteraction)
     {
         case FilterVisibility::Visible:
-        GetStaticMeshComponent()->SetVisibility(false);
+        //GetStaticMeshComponent()->SetVisibility(false);
         break;
     case FilterVisibility::Hidden:
         GetStaticMeshComponent()->SetVisibility(true);
@@ -116,9 +94,6 @@ void AFilterableStaticMeshActor::OnUVPhotoFinished_Implementation()
 // X-Ray
 void AFilterableStaticMeshActor::OnXrayPhoto_Implementation()
 {
-    UE_LOG(LogTemp, Warning, TEXT("Taking xray photo!!!"));
-    GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("taking xray photo rn"));
-
     switch (XrayInteraction)
     {
     case FilterVisibility::Visible:
