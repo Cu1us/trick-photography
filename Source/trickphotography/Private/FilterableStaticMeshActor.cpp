@@ -18,10 +18,10 @@ void AFilterableStaticMeshActor::BeginPlay()
     switch (UVInteraction)
     {
         case FilterVisibility::Visible:
-            GetStaticMeshComponent()->SetVisibility(false);
+            GetStaticMeshComponent()->SetVisibility(true);
             break;
         case FilterVisibility::Hidden:
-            GetStaticMeshComponent()->SetVisibility(true);
+            GetStaticMeshComponent()->SetVisibility(false);
             break;
         default:
             break;
