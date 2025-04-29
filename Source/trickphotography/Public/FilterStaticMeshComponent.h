@@ -11,7 +11,7 @@
 /**
  *
  */
-UCLASS()
+UCLASS(ClassGroup = (Filterable), meta = (BlueprintSpawnableComponent))
 class TRICKPHOTOGRAPHY_API UFilterStaticMeshComponent : public UStaticMeshComponent, public IFilterableInterface
 {
 	GENERATED_BODY()
