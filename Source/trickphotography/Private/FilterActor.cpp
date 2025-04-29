@@ -23,6 +23,8 @@ void AFilterActor::OnAnyPhoto_Implementation()
 		IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
 		if (filterableComponent)
 		{	
+			FString log = component->GetName();
+			UE_LOG(LogTemp, Warning, TEXT("Running OnAnyPhoto on component: %s"), *log);
 			filterableComponent->Execute_OnAnyPhoto(this);
 		}
 	}
