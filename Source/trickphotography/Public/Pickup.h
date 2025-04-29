@@ -16,9 +16,11 @@ class TRICKPHOTOGRAPHY_API APickup : public AFilterActor, public IPickupableInte
 {
 	GENERATED_BODY()
 
-//public:
+public:
 	// Sets default values for this actor's properties
 	//AFilterActor();
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Pickup")
+	FString PickupID;
 
 protected:
 	TArray<UPrimitiveComponent*> PhysicsSimulatedComponents;
