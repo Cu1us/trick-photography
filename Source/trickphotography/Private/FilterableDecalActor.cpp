@@ -6,6 +6,7 @@
 
 void AFilterableDecalActor::BeginPlay()
 {
+    Super::BeginPlay();
     GetDecal()->SetVisibility(VisibleByPlayer);
 }
 
