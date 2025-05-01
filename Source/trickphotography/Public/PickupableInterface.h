@@ -24,11 +24,11 @@ class TRICKPHOTOGRAPHY_API IPickupableInterface
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
-	void OnPickup();
+	void OnPickup(bool isCammy);
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
-	void OnDrop();
+	void OnDrop(bool isCammy);
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
-	bool CanBePickedUp();
+	bool CanBePickedUp(bool isCammy);
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interaction")
-	void Activate(FTransform cameraTransform);
+	void Activate(FTransform cameraTransform, bool isCammy);
 };

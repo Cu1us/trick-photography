@@ -28,8 +28,8 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	void OnPickup_Implementation() override;
-	void OnDrop_Implementation() override;
-	bool CanBePickedUp_Implementation() override;
+	void OnPickup_Implementation(bool isCammy) override;
+	void OnDrop_Implementation(bool isCammy) override;
+	bool CanBePickedUp_Implementation(bool isCammy) override;
 	//void Activate_Implementation(FTransform cameraTransform) override;
 };
