@@ -21,21 +21,6 @@ void AFilterableStaticMeshActor::OnAnyPhoto_Implementation()
 }
 void AFilterableStaticMeshActor::OnAnyPhotoFinished_Implementation()
 {
-    switch (ThermalInteraction)
-    {
-    case FilterVisibility::Visible:
-        GetStaticMeshComponent()->SetMaterial(0, DefaultMaterial);
-        break;
-    case FilterVisibility::Hidden:
-        if (HiddenDueToFilterSetting)
-        {
-            GetStaticMeshComponent()->SetVisibility(true);
-            HiddenDueToFilterSetting = false;
-        }
-        break;
-    default:
-        break;
-    }
 }
 
 // Thermal
@@ -59,6 +44,21 @@ void AFilterableStaticMeshActor::OnThermalPhoto_Implementation()
 }
 void AFilterableStaticMeshActor::OnThermalPhotoFinished_Implementation()
 {
+    switch (ThermalInteraction)
+    {
+    case FilterVisibility::Visible:
+        GetStaticMeshComponent()->SetMaterial(0, DefaultMaterial);
+        break;
+    case FilterVisibility::Hidden:
+        if (HiddenDueToFilterSetting)
+        {
+            GetStaticMeshComponent()->SetVisibility(true);
+            HiddenDueToFilterSetting = false;
+        }
+        break;
+    default:
+        break;
+    }
 }
 
 // UV
@@ -67,7 +67,7 @@ void AFilterableStaticMeshActor::OnUVPhoto_Implementation()
     switch (UVInteraction)
     {
     case FilterVisibility::Visible:
-        //GetStaticMeshComponent()->SetVisibility(true);
+        // GetStaticMeshComponent()->SetVisibility(true);
         break;
     case FilterVisibility::Hidden:
         GetStaticMeshComponent()->SetVisibility(false);
@@ -80,8 +80,8 @@ void AFilterableStaticMeshActor::OnUVPhotoFinished_Implementation()
 {
     switch (UVInteraction)
     {
-        case FilterVisibility::Visible:
-        //GetStaticMeshComponent()->SetVisibility(false);
+    case FilterVisibility::Visible:
+        // GetStaticMeshComponent()->SetVisibility(false);
         break;
     case FilterVisibility::Hidden:
         GetStaticMeshComponent()->SetVisibility(true);
@@ -112,4 +112,19 @@ void AFilterableStaticMeshActor::OnXrayPhoto_Implementation()
 }
 void AFilterableStaticMeshActor::OnXrayPhotoFinished_Implementation()
 {
+    switch (XrayInteraction)
+    {
+    case FilterVisibility::Visible:
+        GetStaticMeshComponent()->SetMaterial(0, DefaultMaterial);
+        break;
+    case FilterVisibility::Hidden:
+        if (HiddenDueToFilterSetting)
+        {
+            GetStaticMeshComponent()->SetVisibility(true);
+            HiddenDueToFilterSetting = false;
+        }
+        break;
+    default:
+        break;
+    }
 }

@@ -18,21 +18,6 @@ void UFilterStaticMeshComponent::OnAnyPhoto_Implementation()
 }
 void UFilterStaticMeshComponent::OnAnyPhotoFinished_Implementation()
 {
-    switch (ThermalInteraction)
-    {
-    case FilterVisibility::Visible:
-        SetMaterial(0, DefaultMaterial);
-        break;
-    case FilterVisibility::Hidden:
-        if (HiddenDueToFilterSetting)
-        {
-            SetVisibility(true);
-            HiddenDueToFilterSetting = false;
-        }
-        break;
-    default:
-        break;
-    }
 }
 
 // Thermal
@@ -56,6 +41,21 @@ void UFilterStaticMeshComponent::OnThermalPhoto_Implementation()
 }
 void UFilterStaticMeshComponent::OnThermalPhotoFinished_Implementation()
 {
+    switch (ThermalInteraction)
+    {
+    case FilterVisibility::Visible:
+        SetMaterial(0, DefaultMaterial);
+        break;
+    case FilterVisibility::Hidden:
+        if (HiddenDueToFilterSetting)
+        {
+            SetVisibility(true);
+            HiddenDueToFilterSetting = false;
+        }
+        break;
+    default:
+        break;
+    }
 }
 
 // UV
@@ -64,7 +64,7 @@ void UFilterStaticMeshComponent::OnUVPhoto_Implementation()
     switch (UVInteraction)
     {
     case FilterVisibility::Visible:
-        //SetVisibility(true);
+        // SetVisibility(true);
         break;
     case FilterVisibility::Hidden:
         SetVisibility(false);
@@ -77,8 +77,8 @@ void UFilterStaticMeshComponent::OnUVPhotoFinished_Implementation()
 {
     switch (UVInteraction)
     {
-        case FilterVisibility::Visible:
-        //SetVisibility(false);
+    case FilterVisibility::Visible:
+        // SetVisibility(false);
         break;
     case FilterVisibility::Hidden:
         SetVisibility(true);
@@ -109,4 +109,19 @@ void UFilterStaticMeshComponent::OnXrayPhoto_Implementation()
 }
 void UFilterStaticMeshComponent::OnXrayPhotoFinished_Implementation()
 {
+    switch (XrayInteraction)
+    {
+    case FilterVisibility::Visible:
+        SetMaterial(0, DefaultMaterial);
+        break;
+    case FilterVisibility::Hidden:
+        if (HiddenDueToFilterSetting)
+        {
+            SetVisibility(true);
+            HiddenDueToFilterSetting = false;
+        }
+        break;
+    default:
+        break;
+    }
 }
