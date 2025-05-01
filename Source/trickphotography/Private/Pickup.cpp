@@ -19,7 +19,7 @@ void APickup::BeginPlay()
     }
 }
 
-void APickup::OnPickup_Implementation()
+void APickup::OnPickup_Implementation(bool isCammy)
 {
     for (UPrimitiveComponent *component : PhysicsSimulatedComponents)
     {
@@ -28,7 +28,7 @@ void APickup::OnPickup_Implementation()
     }
 }
 
-void APickup::OnDrop_Implementation()
+void APickup::OnDrop_Implementation(bool isCammy)
 {
     for (UPrimitiveComponent *component : PhysicsSimulatedComponents)
     {
@@ -37,7 +37,7 @@ void APickup::OnDrop_Implementation()
     }
 }
 
-bool APickup::CanBePickedUp_Implementation()
+bool APickup::CanBePickedUp_Implementation(bool isCammy)
 {
     return true;
 }
