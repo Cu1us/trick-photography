@@ -28,6 +28,8 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Materials\|UV")
 	FilterVisibility UVInteraction;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Materials\|UV")
+	UMaterialInterface *UVMaterial;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Materials\|X-Ray")
 	FilterVisibility XrayInteraction;
