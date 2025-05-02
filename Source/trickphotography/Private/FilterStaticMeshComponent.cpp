@@ -1,6 +1,5 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "FilterStaticMeshComponent.h"
 
 void UFilterStaticMeshComponent::BeginPlay()
@@ -64,7 +63,7 @@ void UFilterStaticMeshComponent::OnUVPhoto_Implementation()
     switch (UVInteraction)
     {
     case FilterVisibility::Visible:
-        // SetVisibility(true);
+        SetMaterial(0, UVMaterial);
         break;
     case FilterVisibility::Hidden:
         SetVisibility(false);
@@ -78,7 +77,7 @@ void UFilterStaticMeshComponent::OnUVPhotoFinished_Implementation()
     switch (UVInteraction)
     {
     case FilterVisibility::Visible:
-        // SetVisibility(false);
+        SetMaterial(0, DefaultMaterial);
         break;
     case FilterVisibility::Hidden:
         SetVisibility(true);
