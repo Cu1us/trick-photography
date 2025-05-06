@@ -1,17 +1,18 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "FilterActor.h"
+#include "FilterPawn.h"
 #include "FilterableInterface.h"
 
+
 // Called when the game starts or when spawned
-void AFilterActor::BeginPlay()
+void AFilterPawn::BeginPlay()
 {
 	Super::BeginPlay();
 	FilterableComponents = GetComponentsByInterface(UFilterableInterface::StaticClass());
 }
 
 // Any
-void AFilterActor::OnAnyPhoto_Implementation()
+void AFilterPawn::OnAnyPhoto_Implementation()
 {
 	for (UActorComponent *component : FilterableComponents)
 	{
@@ -22,7 +23,7 @@ void AFilterActor::OnAnyPhoto_Implementation()
 		}
 	}
 }
-void AFilterActor::OnAnyPhotoFinished_Implementation()
+void AFilterPawn::OnAnyPhotoFinished_Implementation()
 {
 	for (UActorComponent *component : FilterableComponents)
 	{
@@ -35,7 +36,7 @@ void AFilterActor::OnAnyPhotoFinished_Implementation()
 }
 
 // Thermal
-void AFilterActor::OnThermalPhoto_Implementation()
+void AFilterPawn::OnThermalPhoto_Implementation()
 {
 	for (UActorComponent *component : FilterableComponents)
 	{
@@ -46,7 +47,7 @@ void AFilterActor::OnThermalPhoto_Implementation()
 		}
 	}
 }
-void AFilterActor::OnThermalPhotoFinished_Implementation()
+void AFilterPawn::OnThermalPhotoFinished_Implementation()
 {
 	for (UActorComponent *component : FilterableComponents)
 	{
@@ -59,7 +60,7 @@ void AFilterActor::OnThermalPhotoFinished_Implementation()
 }
 
 // UV
-void AFilterActor::OnUVPhoto_Implementation()
+void AFilterPawn::OnUVPhoto_Implementation()
 {
 	for (UActorComponent *component : FilterableComponents)
 	{
@@ -70,7 +71,7 @@ void AFilterActor::OnUVPhoto_Implementation()
 		}
 	}
 }
-void AFilterActor::OnUVPhotoFinished_Implementation()
+void AFilterPawn::OnUVPhotoFinished_Implementation()
 {
 	for (UActorComponent *component : FilterableComponents)
 	{
@@ -83,7 +84,7 @@ void AFilterActor::OnUVPhotoFinished_Implementation()
 }
 
 // X-Ray
-void AFilterActor::OnXrayPhoto_Implementation()
+void AFilterPawn::OnXrayPhoto_Implementation()
 {
 	for (UActorComponent *component : FilterableComponents)
 	{
@@ -94,7 +95,7 @@ void AFilterActor::OnXrayPhoto_Implementation()
 		}
 	}
 }
-void AFilterActor::OnXrayPhotoFinished_Implementation()
+void AFilterPawn::OnXrayPhotoFinished_Implementation()
 {
 	for (UActorComponent *component : FilterableComponents)
 	{
