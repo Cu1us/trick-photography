@@ -6,16 +6,16 @@
 		},
 		{
 			"name": "UE5",
-			"path": "/home/cu1us/Documents/UnrealEngine554"
+			"path": "C:\\Program Files\\Epic Games\\UE_5.5"
 		}
 	],
 	"settings": {
 		"typescript.tsc.autoDetect": "off",
 		"npm.autoDetect": "off",
-		"terminal.integrated.env.linux": {
-			"PATH": "/home/cu1us/Documents/UnrealEngine554/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64:${env:PATH}",
-			"DOTNET_ROOT": "/home/cu1us/Documents/UnrealEngine554/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64",
-			"DOTNET_HOST_PATH": "/home/cu1us/Documents/UnrealEngine554/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64/dotnet",
+		"terminal.integrated.env.windows": {
+			"PATH": "C:\\Program Files\\Epic Games\\UE_5.5\\Engine\\Binaries\\ThirdParty\\DotNet\\8.0.300\\win-x64;${env:PATH}",
+			"DOTNET_ROOT": "C:\\Program Files\\Epic Games\\UE_5.5\\Engine\\Binaries\\ThirdParty\\DotNet\\8.0.300\\win-x64",
+			"DOTNET_HOST_PATH": "C:\\Program Files\\Epic Games\\UE_5.5\\Engine\\Binaries\\ThirdParty\\DotNet\\8.0.300\\win-x64\\dotnet.exe",
 			"DOTNET_MULTILEVEL_LOOKUP": "0",
 			"DOTNET_ROLL_FORWARD": "LatestMajor"
 		}
@@ -30,718 +30,435 @@
 		"version": "2.0.0",
 		"tasks": [
 			{
-				"label": "trickphotography Linux Debug Build",
+				"label": "trickphotography Win64 Debug Build",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
 				"args": [
 					"trickphotography",
-					"Linux",
+					"Win64",
 					"Debug",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.5"
 				}
 			},
 			{
-				"label": "trickphotography Linux Debug Rebuild",
+				"label": "trickphotography Win64 Debug Rebuild",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
 				"args": [
 					"trickphotography",
-					"Linux",
+					"Win64",
 					"Debug",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"dependsOn": [
-					"trickphotography Linux Debug Clean"
+					"trickphotography Win64 Debug Clean"
 				],
 				"type": "shell",
 				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.5"
 				}
 			},
 			{
-				"label": "trickphotography Linux Debug Clean",
+				"label": "trickphotography Win64 Debug Clean",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
 				"args": [
 					"trickphotography",
-					"Linux",
+					"Win64",
 					"Debug",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
-					"-waitmutex",
-					"-clean"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
-				}
-			},
-			{
-				"label": "trickphotography Linux DebugGame Build",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
-				"args": [
-					"trickphotography",
-					"Linux",
-					"DebugGame",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.5"
 				}
 			},
 			{
-				"label": "trickphotography Linux DebugGame Rebuild",
+				"label": "trickphotography Win64 DebugGame Build",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
 				"args": [
 					"trickphotography",
-					"Linux",
+					"Win64",
 					"DebugGame",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.5"
+				}
+			},
+			{
+				"label": "trickphotography Win64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"trickphotography",
+					"Win64",
+					"DebugGame",
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"dependsOn": [
-					"trickphotography Linux DebugGame Clean"
+					"trickphotography Win64 DebugGame Clean"
 				],
 				"type": "shell",
 				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.5"
 				}
 			},
 			{
-				"label": "trickphotography Linux DebugGame Clean",
+				"label": "trickphotography Win64 DebugGame Clean",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
 				"args": [
 					"trickphotography",
-					"Linux",
+					"Win64",
 					"DebugGame",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
-					"-waitmutex",
-					"-clean"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
-				}
-			},
-			{
-				"label": "trickphotography Linux Development Build",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
-				"args": [
-					"trickphotography",
-					"Linux",
-					"Development",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.5"
 				}
 			},
 			{
-				"label": "trickphotography Linux Development Rebuild",
+				"label": "trickphotography Win64 Development Build",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
 				"args": [
 					"trickphotography",
-					"Linux",
+					"Win64",
 					"Development",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.5"
+				}
+			},
+			{
+				"label": "trickphotography Win64 Development Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"trickphotography",
+					"Win64",
+					"Development",
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"dependsOn": [
-					"trickphotography Linux Development Clean"
+					"trickphotography Win64 Development Clean"
 				],
 				"type": "shell",
 				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.5"
 				}
 			},
 			{
-				"label": "trickphotography Linux Development Clean",
+				"label": "trickphotography Win64 Development Clean",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
 				"args": [
 					"trickphotography",
-					"Linux",
+					"Win64",
 					"Development",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
-					"-waitmutex",
-					"-clean"
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject",
+					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.5"
 				}
 			},
 			{
-				"label": "trickphotography Linux Test Build",
+				"label": "trickphotography Win64 Test Build",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
 				"args": [
 					"trickphotography",
-					"Linux",
+					"Win64",
 					"Test",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.5"
 				}
 			},
 			{
-				"label": "trickphotography Linux Test Rebuild",
+				"label": "trickphotography Win64 Test Rebuild",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
 				"args": [
 					"trickphotography",
-					"Linux",
+					"Win64",
 					"Test",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"dependsOn": [
-					"trickphotography Linux Test Clean"
+					"trickphotography Win64 Test Clean"
 				],
 				"type": "shell",
 				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.5"
 				}
 			},
 			{
-				"label": "trickphotography Linux Test Clean",
+				"label": "trickphotography Win64 Test Clean",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
 				"args": [
 					"trickphotography",
-					"Linux",
+					"Win64",
 					"Test",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
-					"-waitmutex",
-					"-clean"
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject",
+					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.5"
 				}
 			},
 			{
-				"label": "trickphotography Linux Shipping Build",
+				"label": "trickphotography Win64 Shipping Build",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
 				"args": [
 					"trickphotography",
-					"Linux",
+					"Win64",
 					"Shipping",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.5"
 				}
 			},
 			{
-				"label": "trickphotography Linux Shipping Rebuild",
+				"label": "trickphotography Win64 Shipping Rebuild",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
 				"args": [
 					"trickphotography",
-					"Linux",
+					"Win64",
 					"Shipping",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"dependsOn": [
-					"trickphotography Linux Shipping Clean"
+					"trickphotography Win64 Shipping Clean"
 				],
 				"type": "shell",
 				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.5"
 				}
 			},
 			{
-				"label": "trickphotography Linux Shipping Clean",
+				"label": "trickphotography Win64 Shipping Clean",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
 				"args": [
 					"trickphotography",
-					"Linux",
+					"Win64",
 					"Shipping",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
-					"-waitmutex",
-					"-clean"
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject",
+					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.5"
 				}
 			},
 			{
-				"label": "trickphotography LinuxArm64 Debug Build",
+				"label": "trickphotographyEditor Win64 Debug Build",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
 				"args": [
-					"trickphotography",
-					"LinuxArm64",
+					"trickphotographyEditor",
+					"Win64",
 					"Debug",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.5"
 				}
 			},
 			{
-				"label": "trickphotography LinuxArm64 Debug Rebuild",
+				"label": "trickphotographyEditor Win64 Debug Rebuild",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
 				"args": [
-					"trickphotography",
-					"LinuxArm64",
+					"trickphotographyEditor",
+					"Win64",
 					"Debug",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"dependsOn": [
-					"trickphotography LinuxArm64 Debug Clean"
+					"trickphotographyEditor Win64 Debug Clean"
 				],
 				"type": "shell",
 				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.5"
 				}
 			},
 			{
-				"label": "trickphotography LinuxArm64 Debug Clean",
+				"label": "trickphotographyEditor Win64 Debug Clean",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
 				"args": [
-					"trickphotography",
-					"LinuxArm64",
+					"trickphotographyEditor",
+					"Win64",
 					"Debug",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
-					"-waitmutex",
-					"-clean"
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject",
+					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.5"
 				}
 			},
 			{
-				"label": "trickphotography LinuxArm64 DebugGame Build",
+				"label": "trickphotographyEditor Win64 DebugGame Build",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
 				"args": [
-					"trickphotography",
-					"LinuxArm64",
+					"trickphotographyEditor",
+					"Win64",
 					"DebugGame",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.5"
 				}
 			},
 			{
-				"label": "trickphotography LinuxArm64 DebugGame Rebuild",
+				"label": "trickphotographyEditor Win64 DebugGame Rebuild",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
 				"args": [
-					"trickphotography",
-					"LinuxArm64",
+					"trickphotographyEditor",
+					"Win64",
 					"DebugGame",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"dependsOn": [
-					"trickphotography LinuxArm64 DebugGame Clean"
+					"trickphotographyEditor Win64 DebugGame Clean"
 				],
 				"type": "shell",
 				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.5"
 				}
 			},
 			{
-				"label": "trickphotography LinuxArm64 DebugGame Clean",
+				"label": "trickphotographyEditor Win64 DebugGame Clean",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
 				"args": [
-					"trickphotography",
-					"LinuxArm64",
+					"trickphotographyEditor",
+					"Win64",
 					"DebugGame",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
-					"-waitmutex",
-					"-clean"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
-				}
-			},
-			{
-				"label": "trickphotography LinuxArm64 Development Build",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
-				"args": [
-					"trickphotography",
-					"LinuxArm64",
-					"Development",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.5"
 				}
 			},
 			{
-				"label": "trickphotography LinuxArm64 Development Rebuild",
+				"label": "trickphotographyEditor Win64 Development Build",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
 				"args": [
-					"trickphotography",
-					"LinuxArm64",
+					"trickphotographyEditor",
+					"Win64",
 					"Development",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.5"
+				}
+			},
+			{
+				"label": "trickphotographyEditor Win64 Development Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"trickphotographyEditor",
+					"Win64",
+					"Development",
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"dependsOn": [
-					"trickphotography LinuxArm64 Development Clean"
+					"trickphotographyEditor Win64 Development Clean"
 				],
 				"type": "shell",
 				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.5"
 				}
 			},
 			{
-				"label": "trickphotography LinuxArm64 Development Clean",
+				"label": "trickphotographyEditor Win64 Development Clean",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
 				"args": [
-					"trickphotography",
-					"LinuxArm64",
+					"trickphotographyEditor",
+					"Win64",
 					"Development",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
-					"-waitmutex",
-					"-clean"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
-				}
-			},
-			{
-				"label": "trickphotography LinuxArm64 Test Build",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
-				"args": [
-					"trickphotography",
-					"LinuxArm64",
-					"Test",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
-				}
-			},
-			{
-				"label": "trickphotography LinuxArm64 Test Rebuild",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
-				"args": [
-					"trickphotography",
-					"LinuxArm64",
-					"Test",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"dependsOn": [
-					"trickphotography LinuxArm64 Test Clean"
-				],
-				"type": "shell",
-				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
-				}
-			},
-			{
-				"label": "trickphotography LinuxArm64 Test Clean",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
-				"args": [
-					"trickphotography",
-					"LinuxArm64",
-					"Test",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
-					"-waitmutex",
-					"-clean"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
-				}
-			},
-			{
-				"label": "trickphotography LinuxArm64 Shipping Build",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
-				"args": [
-					"trickphotography",
-					"LinuxArm64",
-					"Shipping",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
-				}
-			},
-			{
-				"label": "trickphotography LinuxArm64 Shipping Rebuild",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
-				"args": [
-					"trickphotography",
-					"LinuxArm64",
-					"Shipping",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"dependsOn": [
-					"trickphotography LinuxArm64 Shipping Clean"
-				],
-				"type": "shell",
-				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
-				}
-			},
-			{
-				"label": "trickphotography LinuxArm64 Shipping Clean",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
-				"args": [
-					"trickphotography",
-					"LinuxArm64",
-					"Shipping",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
-					"-waitmutex",
-					"-clean"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
-				}
-			},
-			{
-				"label": "trickphotographyEditor Linux Debug Build",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
-				"args": [
-					"trickphotographyEditor",
-					"Linux",
-					"Debug",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
-				}
-			},
-			{
-				"label": "trickphotographyEditor Linux Debug Rebuild",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
-				"args": [
-					"trickphotographyEditor",
-					"Linux",
-					"Debug",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"dependsOn": [
-					"trickphotographyEditor Linux Debug Clean"
-				],
-				"type": "shell",
-				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
-				}
-			},
-			{
-				"label": "trickphotographyEditor Linux Debug Clean",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
-				"args": [
-					"trickphotographyEditor",
-					"Linux",
-					"Debug",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
-					"-waitmutex",
-					"-clean"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
-				}
-			},
-			{
-				"label": "trickphotographyEditor Linux DebugGame Build",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
-				"args": [
-					"trickphotographyEditor",
-					"Linux",
-					"DebugGame",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
-				}
-			},
-			{
-				"label": "trickphotographyEditor Linux DebugGame Rebuild",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
-				"args": [
-					"trickphotographyEditor",
-					"Linux",
-					"DebugGame",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"dependsOn": [
-					"trickphotographyEditor Linux DebugGame Clean"
-				],
-				"type": "shell",
-				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
-				}
-			},
-			{
-				"label": "trickphotographyEditor Linux DebugGame Clean",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
-				"args": [
-					"trickphotographyEditor",
-					"Linux",
-					"DebugGame",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
-					"-waitmutex",
-					"-clean"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
-				}
-			},
-			{
-				"label": "trickphotographyEditor Linux Development Build",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
-				"args": [
-					"trickphotographyEditor",
-					"Linux",
-					"Development",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
-				}
-			},
-			{
-				"label": "trickphotographyEditor Linux Development Rebuild",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
-				"args": [
-					"trickphotographyEditor",
-					"Linux",
-					"Development",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"dependsOn": [
-					"trickphotographyEditor Linux Development Clean"
-				],
-				"type": "shell",
-				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
-				}
-			},
-			{
-				"label": "trickphotographyEditor Linux Development Clean",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
-				"args": [
-					"trickphotographyEditor",
-					"Linux",
-					"Development",
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
-					"-waitmutex",
-					"-clean"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/home/cu1us/Documents/UnrealEngine554"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.5"
 				}
 			}
 		]
@@ -752,127 +469,158 @@
 			{
 				"name": "Launch trickphotography (Debug)",
 				"request": "launch",
-				"program": "/home/cu1us/Documents/GitHub/trickphotography/Binaries/Linux/UnrealGame-Linux-Debug",
-				"preLaunchTask": "trickphotography Linux Debug Build",
+				"program": "C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
+				"preLaunchTask": "trickphotography Win64 Debug Build",
 				"args": [
 				],
-				"cwd": "/home/cu1us/Documents/UnrealEngine554",
-				"type": "cppdbg",
-				"visualizerFile": "/home/cu1us/Documents/UnrealEngine554/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
-				"showDisplayString": true
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.5",
+				"stopAtEntry": false,
+				"console": "integratedTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.5\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.5"
+				}
 			},
 			{
 				"name": "Launch trickphotography (DebugGame)",
 				"request": "launch",
-				"program": "/home/cu1us/Documents/GitHub/trickphotography/Binaries/Linux/UnrealGame-Linux-DebugGame",
-				"preLaunchTask": "trickphotography Linux DebugGame Build",
+				"program": "C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
+				"preLaunchTask": "trickphotography Win64 DebugGame Build",
 				"args": [
 				],
-				"cwd": "/home/cu1us/Documents/UnrealEngine554",
-				"type": "cppdbg",
-				"visualizerFile": "/home/cu1us/Documents/UnrealEngine554/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
-				"showDisplayString": true
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.5",
+				"stopAtEntry": false,
+				"console": "integratedTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.5\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.5"
+				}
 			},
 			{
 				"name": "Launch trickphotography (Development)",
 				"request": "launch",
-				"program": "/home/cu1us/Documents/GitHub/trickphotography/Binaries/Linux/UnrealGame",
-				"preLaunchTask": "trickphotography Linux Development Build",
+				"program": "C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\Binaries\\Win64\\UnrealGame.exe",
+				"preLaunchTask": "trickphotography Win64 Development Build",
 				"args": [
 				],
-				"cwd": "/home/cu1us/Documents/UnrealEngine554",
-				"type": "cppdbg",
-				"visualizerFile": "/home/cu1us/Documents/UnrealEngine554/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
-				"showDisplayString": true
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.5",
+				"stopAtEntry": false,
+				"console": "integratedTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.5\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.5"
+				}
 			},
 			{
 				"name": "Launch trickphotography (Test)",
 				"request": "launch",
-				"program": "/home/cu1us/Documents/GitHub/trickphotography/Binaries/Linux/UnrealGame-Linux-Test",
-				"preLaunchTask": "trickphotography Linux Test Build",
+				"program": "C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
+				"preLaunchTask": "trickphotography Win64 Test Build",
 				"args": [
 				],
-				"cwd": "/home/cu1us/Documents/UnrealEngine554",
-				"type": "cppdbg",
-				"visualizerFile": "/home/cu1us/Documents/UnrealEngine554/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
-				"showDisplayString": true
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.5",
+				"stopAtEntry": false,
+				"console": "integratedTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.5\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.5"
+				}
 			},
 			{
 				"name": "Launch trickphotography (Shipping)",
 				"request": "launch",
-				"program": "/home/cu1us/Documents/GitHub/trickphotography/Binaries/Linux/UnrealGame-Linux-Shipping",
-				"preLaunchTask": "trickphotography Linux Shipping Build",
+				"program": "C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
+				"preLaunchTask": "trickphotography Win64 Shipping Build",
 				"args": [
 				],
-				"cwd": "/home/cu1us/Documents/UnrealEngine554",
-				"type": "cppdbg",
-				"visualizerFile": "/home/cu1us/Documents/UnrealEngine554/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
-				"showDisplayString": true
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.5",
+				"stopAtEntry": false,
+				"console": "integratedTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.5\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.5"
+				}
 			},
 			{
 				"name": "Launch trickphotographyEditor (Debug)",
 				"request": "launch",
-				"program": "/home/cu1us/Documents/UnrealEngine554/Engine/Binaries/Linux/UnrealEditor-Linux-Debug",
-				"preLaunchTask": "trickphotographyEditor Linux Debug Build",
+				"program": "C:\\Program Files\\Epic Games\\UE_5.5\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-Debug.exe",
+				"preLaunchTask": "trickphotographyEditor Win64 Debug Build",
 				"args": [
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject"
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject"
 				],
-				"cwd": "/home/cu1us/Documents/UnrealEngine554",
-				"type": "cppdbg",
-				"visualizerFile": "/home/cu1us/Documents/UnrealEngine554/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
-				"showDisplayString": true
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.5",
+				"stopAtEntry": false,
+				"console": "integratedTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.5\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.5"
+				}
 			},
 			{
 				"name": "Launch trickphotographyEditor (DebugGame)",
 				"request": "launch",
-				"program": "/home/cu1us/Documents/UnrealEngine554/Engine/Binaries/Linux/UnrealEditor-Linux-DebugGame",
-				"preLaunchTask": "trickphotographyEditor Linux DebugGame Build",
+				"program": "C:\\Program Files\\Epic Games\\UE_5.5\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-DebugGame.exe",
+				"preLaunchTask": "trickphotographyEditor Win64 DebugGame Build",
 				"args": [
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject"
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject"
 				],
-				"cwd": "/home/cu1us/Documents/UnrealEngine554",
-				"type": "cppdbg",
-				"visualizerFile": "/home/cu1us/Documents/UnrealEngine554/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
-				"showDisplayString": true
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.5",
+				"stopAtEntry": false,
+				"console": "integratedTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.5\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.5"
+				}
 			},
 			{
 				"name": "Launch trickphotographyEditor (Development)",
 				"request": "launch",
-				"program": "/home/cu1us/Documents/UnrealEngine554/Engine/Binaries/Linux/UnrealEditor",
-				"preLaunchTask": "trickphotographyEditor Linux Development Build",
+				"program": "C:\\Program Files\\Epic Games\\UE_5.5\\Engine\\Binaries\\Win64\\UnrealEditor.exe",
+				"preLaunchTask": "trickphotographyEditor Win64 Development Build",
 				"args": [
-					"/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject"
+					"C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject"
 				],
-				"cwd": "/home/cu1us/Documents/UnrealEngine554",
-				"type": "cppdbg",
-				"visualizerFile": "/home/cu1us/Documents/UnrealEngine554/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
-				"showDisplayString": true
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.5",
+				"stopAtEntry": false,
+				"console": "integratedTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.5\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.5"
+				}
 			},
 			{
 				"name": "Generate Project Files",
 				"type": "coreclr",
 				"request": "launch",
-				"preLaunchTask": "UnrealBuildTool Linux Development Build",
-				"program": "/home/cu1us/Documents/UnrealEngine554/Engine/Build/BatchFiles/RunUBT.bat",
+				"preLaunchTask": "UnrealBuildTool Win64 Development Build",
+				"program": "C:\\Program Files\\Epic Games\\UE_5.5\\Engine\\Build\\BatchFiles\\RunUBT.bat",
 				"args": [
 					"-projectfiles",
 					"-vscode",
-					"-project=/home/cu1us/Documents/GitHub/trickphotography/trickphotography.uproject",
+					"-project=C:\\Users\\viggo\\Desktop\\Work\\Unreal Files\\Camera Game\\trickphotography\\trickphotography.uproject",
 					"-game",
 					"-engine",
 					"-dotnet"
 				],
 				"env": {
-					"PATH": "/home/cu1us/Documents/UnrealEngine554/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64:${env:PATH}",
-					"DOTNET_ROOT": "/home/cu1us/Documents/UnrealEngine554/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64",
-					"DOTNET_HOST_PATH": "/home/cu1us/Documents/UnrealEngine554/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64/dotnet",
+					"PATH": "C:\\Program Files\\Epic Games\\UE_5.5\\Engine\\Binaries\\ThirdParty\\DotNet\\8.0.300\\win-x64;${env:PATH}",
+					"DOTNET_ROOT": "C:\\Program Files\\Epic Games\\UE_5.5\\Engine\\Binaries\\ThirdParty\\DotNet\\8.0.300\\win-x64",
+					"DOTNET_HOST_PATH": "C:\\Program Files\\Epic Games\\UE_5.5\\Engine\\Binaries\\ThirdParty\\DotNet\\8.0.300\\win-x64\\dotnet.exe",
 					"DOTNET_MULTILEVEL_LOOKUP": "0",
 					"DOTNET_ROLL_FORWARD": "LatestMajor"
 				},
-				"console": "internalConsole",
-				"internalConsoleOptions": "openOnSessionStart",
+				"console": "integratedTerminal",
 				"stopAtEntry": false,
-				"cwd": "/home/cu1us/Documents/UnrealEngine554"
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.5"
 			}
 		]
 	}
