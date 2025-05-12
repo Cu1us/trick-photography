@@ -2,6 +2,11 @@
 
 #include "FilterStaticMeshComponent.h"
 
+void UFilterStaticMeshComponent::SetMainMaterial(UMaterialInterface *NewMaterial)
+{
+    DefaultMaterial = NewMaterial;
+    SetMaterial(0, NewMaterial);
+}
 void UFilterStaticMeshComponent::BeginPlay()
 {
     Super::BeginPlay();
