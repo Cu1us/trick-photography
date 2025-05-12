@@ -36,6 +36,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Materials\|X-Ray")
 	UMaterialInterface *XrayMaterial;
 
+	UFUNCTION(BlueprintCallable, Category = "Filter Interaction")
+	void SetMainMaterial(UMaterialInterface *NewMaterial);
+
 	void OnAnyPhoto_Implementation() override;
 	void OnAnyPhotoFinished_Implementation() override;
 	void OnThermalPhoto_Implementation() override;
