@@ -20,6 +20,7 @@ void AFilterActor::SetPPMHighlight(PPMHighlightType type)
 		{
 			primComponent->bRenderCustomDepth = true;
 			primComponent->CustomDepthStencilValue = depthStencil;
+			primComponent->MarkRenderStateDirty();
 		}
 	}
 }
