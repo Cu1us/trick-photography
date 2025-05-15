@@ -10,6 +10,21 @@ void AFilterActor::BeginPlay()
 	FilterableComponents = GetComponentsByInterface(UFilterableInterface::StaticClass());
 }
 
+void AFilterActor::SetPPMHighlight(PPMHighlightType type)
+{
+	uint8 depthStencil = static_cast<uint8>(type);
+	for (UActorComponent *component : GetComponents())
+	{
+		UPrimitiveComponent *primComponent = Cast<UPrimitiveComponent>(component);
+		if (primComponent)
+		{
+			primComponent->bRenderCustomDepth = true;
+			primComponent->CustomDepthStencilValue = depthStencil;
+			primComponent->MarkRenderStateDirty();
+		}
+	}
+}
+
 // Any
 void AFilterActor::OnAnyPhoto_Implementation()
 {

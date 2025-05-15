@@ -7,6 +7,15 @@
 #include "FilterableInterface.h"
 #include "FilterActor.generated.h"
 
+UENUM(Blueprintable, BlueprintType)
+enum class PPMHighlightType : uint8
+{
+	None = 0 UMETA(DisplayName = "None"),
+	WallOutline = 2 UMETA(DisplayName = "Wall Outline"),
+	HighlightPickup = 3 UMETA(DisplayName = "Highlight: Pickup"),
+	HighlightHint = 4 UMETA(DisplayName = "Highlight: Hint")
+};
+
 UCLASS()
 class TRICKPHOTOGRAPHY_API AFilterActor : public AActor, public IFilterableInterface
 {
@@ -25,6 +34,9 @@ protected:
 public:	
 	// Called every frame
 	//virtual void Tick(float DeltaTime) override;
+
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Set Post Processing Highlight", Keywords = "Interact", Category = "Filter Actor"))
+	void SetPPMHighlight(PPMHighlightType type);
 
 	void OnAnyPhoto_Implementation() override;
 	void OnAnyPhotoFinished_Implementation() override;

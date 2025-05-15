@@ -77,3 +77,4 @@ Plugins/**/Intermediate/*
 DerivedDataCache/*
 .vsconfig
 trickphotography.code-workspace
+*.code-workspace
