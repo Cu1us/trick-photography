@@ -7,7 +7,7 @@
 void AFilterActor::BeginPlay()
 {
 	Super::BeginPlay();
-	FilterableComponents = GetComponentsByInterface(UFilterableInterface::StaticClass());
+	RegisterFilterableComponents();
 }
 
 void AFilterActor::SetPPMHighlight(PPMHighlightType type)
@@ -25,15 +25,23 @@ void AFilterActor::SetPPMHighlight(PPMHighlightType type)
 	}
 }
 
+void AFilterActor::RegisterFilterableComponents()
+{
+	FilterableComponents = GetComponentsByInterface(UFilterableInterface::StaticClass());
+}
+
 // Any
 void AFilterActor::OnAnyPhoto_Implementation()
 {
 	for (UActorComponent *component : FilterableComponents)
 	{
-		IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
-		if (filterableComponent)
+		if (IsValid(component))
 		{
-			filterableComponent->Execute_OnAnyPhoto(Cast<UObject>(filterableComponent));
+			IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
+			if (filterableComponent)
+			{
+				filterableComponent->Execute_OnAnyPhoto(Cast<UObject>(filterableComponent));
+			}
 		}
 	}
 }
@@ -41,11 +49,14 @@ void AFilterActor::OnAnyPhotoFinished_Implementation()
 {
 	for (UActorComponent *component : FilterableComponents)
 	{
+		if (IsValid(component))
+		{
 		IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
 		if (filterableComponent)
 		{
 			filterableComponent->Execute_OnAnyPhotoFinished(Cast<UObject>(filterableComponent));
 		}
+	}
 	}
 }
 
@@ -54,22 +65,28 @@ void AFilterActor::OnThermalPhoto_Implementation()
 {
 	for (UActorComponent *component : FilterableComponents)
 	{
+		if (IsValid(component))
+		{
 		IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
 		if (filterableComponent)
 		{
 			filterableComponent->Execute_OnThermalPhoto(Cast<UObject>(filterableComponent));
 		}
 	}
+	}
 }
 void AFilterActor::OnThermalPhotoFinished_Implementation()
 {
 	for (UActorComponent *component : FilterableComponents)
 	{
+		if (IsValid(component))
+		{
 		IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
 		if (filterableComponent)
 		{
 			filterableComponent->Execute_OnThermalPhotoFinished(Cast<UObject>(filterableComponent));
 		}
+	}
 	}
 }
 
@@ -78,22 +95,28 @@ void AFilterActor::OnUVPhoto_Implementation()
 {
 	for (UActorComponent *component : FilterableComponents)
 	{
+		if (IsValid(component))
+		{
 		IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
 		if (filterableComponent)
 		{
 			filterableComponent->Execute_OnUVPhoto(Cast<UObject>(filterableComponent));
 		}
 	}
+	}
 }
 void AFilterActor::OnUVPhotoFinished_Implementation()
 {
 	for (UActorComponent *component : FilterableComponents)
 	{
+		if (IsValid(component))
+		{
 		IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
 		if (filterableComponent)
 		{
 			filterableComponent->Execute_OnUVPhotoFinished(Cast<UObject>(filterableComponent));
 		}
+	}
 	}
 }
 
@@ -102,21 +125,27 @@ void AFilterActor::OnXrayPhoto_Implementation()
 {
 	for (UActorComponent *component : FilterableComponents)
 	{
+		if (IsValid(component))
+		{
 		IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
 		if (filterableComponent)
 		{
 			filterableComponent->Execute_OnXrayPhoto(Cast<UObject>(filterableComponent));
 		}
 	}
+	}
 }
 void AFilterActor::OnXrayPhotoFinished_Implementation()
 {
 	for (UActorComponent *component : FilterableComponents)
 	{
+		if (IsValid(component))
+		{
 		IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
 		if (filterableComponent)
 		{
 			filterableComponent->Execute_OnXrayPhotoFinished(Cast<UObject>(filterableComponent));
 		}
+	}
 	}
 }

@@ -37,6 +37,8 @@ public:
 
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Set Post Processing Highlight", Keywords = "Interact", Category = "Filter Actor"))
 	void SetPPMHighlight(PPMHighlightType type);
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Re-Register Filterable Components", Keywords = "Component", Category = "Filter Actor"))
+	void RegisterFilterableComponents();
 
 	void OnAnyPhoto_Implementation() override;
 	void OnAnyPhotoFinished_Implementation() override;
