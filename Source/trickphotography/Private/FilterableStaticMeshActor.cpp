@@ -13,6 +13,13 @@ void AFilterableStaticMeshActor::BeginPlay()
 
     HiddenDueToFilterSetting = false;
     DefaultMaterial = GetStaticMeshComponent()->GetMaterial(0);
+    if (IsInvisible)
+    {
+        GetStaticMeshComponent()->SetVisibility(false);
+        DefaultCollisionType = GetStaticMeshComponent()->GetCollisionObjectType();
+        GetStaticMeshComponent()->SetCollisionObjectType(ECollisionChannel::ECC_GameTraceChannel4);
+        GetStaticMeshComponent()->SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel3, ECollisionResponse::ECR_Overlap);
+    }
 }
 
 // Any
@@ -26,6 +33,8 @@ void AFilterableStaticMeshActor::OnAnyPhotoFinished_Implementation()
 // Thermal
 void AFilterableStaticMeshActor::OnThermalPhoto_Implementation()
 {
+    if (IsInvisible)
+        return;
     switch (ThermalInteraction)
     {
     case FilterVisibility::Visible:
@@ -44,6 +53,8 @@ void AFilterableStaticMeshActor::OnThermalPhoto_Implementation()
 }
 void AFilterableStaticMeshActor::OnThermalPhotoFinished_Implementation()
 {
+    if (IsInvisible)
+        return;
     switch (ThermalInteraction)
     {
     case FilterVisibility::Visible:
@@ -64,11 +75,12 @@ void AFilterableStaticMeshActor::OnThermalPhotoFinished_Implementation()
 // UV
 void AFilterableStaticMeshActor::OnUVPhoto_Implementation()
 {
+    if (IsInvisible)
+        return;
     switch (UVInteraction)
     {
     case FilterVisibility::Visible:
         GetStaticMeshComponent()->SetMaterial(0, UVMaterial);
-
         break;
     case FilterVisibility::Hidden:
         GetStaticMeshComponent()->SetVisibility(false);
@@ -79,6 +91,8 @@ void AFilterableStaticMeshActor::OnUVPhoto_Implementation()
 }
 void AFilterableStaticMeshActor::OnUVPhotoFinished_Implementation()
 {
+    if (IsInvisible)
+        return;
     switch (UVInteraction)
     {
     case FilterVisibility::Visible:
@@ -95,6 +109,8 @@ void AFilterableStaticMeshActor::OnUVPhotoFinished_Implementation()
 // X-Ray
 void AFilterableStaticMeshActor::OnXrayPhoto_Implementation()
 {
+    if (IsInvisible)
+        return;
     switch (XrayInteraction)
     {
     case FilterVisibility::Visible:
@@ -113,6 +129,8 @@ void AFilterableStaticMeshActor::OnXrayPhoto_Implementation()
 }
 void AFilterableStaticMeshActor::OnXrayPhotoFinished_Implementation()
 {
+    if (IsInvisible)
+        return;
     switch (XrayInteraction)
     {
     case FilterVisibility::Visible:
@@ -127,5 +145,48 @@ void AFilterableStaticMeshActor::OnXrayPhotoFinished_Implementation()
         break;
     default:
         break;
+    }
+}
+
+// Invisibility
+void AFilterableStaticMeshActor::OnInvisPhoto_Implementation()
+{
+    if (IsInvisible)
+    {
+        GetStaticMeshComponent()->SetMaterial(0, InvisMaterial);
+        GetStaticMeshComponent()->SetVisibility(true);
+    }
+}
+void AFilterableStaticMeshActor::OnInvisPhotoFinished_Implementation()
+{
+    if (IsInvisible)
+    {
+        GetStaticMeshComponent()->SetMaterial(0, DefaultMaterial);
+        GetStaticMeshComponent()->SetVisibility(false);
+    }
+}
+
+void AFilterableStaticMeshActor::RevealFromInvisibility()
+{
+    if (IsInvisible)
+    {
+        IsInvisible = false;
+        GetStaticMeshComponent()->SetMaterial(0, DefaultMaterial);
+        GetStaticMeshComponent()->SetVisibility(true);
+        GetStaticMeshComponent()->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+        GetStaticMeshComponent()->SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel3, ECollisionResponse::ECR_Ignore);
+        GetStaticMeshComponent()->SetCollisionObjectType(DefaultCollisionType);
+    }
+}
+void AFilterableStaticMeshActor::MakeInvisible()
+{
+    if (!IsInvisible)
+    {
+        IsInvisible = true;
+        GetStaticMeshComponent()->SetVisibility(false);
+        DefaultCollisionType = GetStaticMeshComponent()->GetCollisionObjectType();
+        GetStaticMeshComponent()->SetCollisionObjectType(ECollisionChannel::ECC_GameTraceChannel4);
+        GetStaticMeshComponent()->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
+        GetStaticMeshComponent()->SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel3, ECollisionResponse::ECR_Overlap);
     }
 }

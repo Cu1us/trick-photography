@@ -51,12 +51,12 @@ void AFilterActor::OnAnyPhotoFinished_Implementation()
 	{
 		if (IsValid(component))
 		{
-		IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
-		if (filterableComponent)
-		{
-			filterableComponent->Execute_OnAnyPhotoFinished(Cast<UObject>(filterableComponent));
+			IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
+			if (filterableComponent)
+			{
+				filterableComponent->Execute_OnAnyPhotoFinished(Cast<UObject>(filterableComponent));
+			}
 		}
-	}
 	}
 }
 
@@ -67,12 +67,12 @@ void AFilterActor::OnThermalPhoto_Implementation()
 	{
 		if (IsValid(component))
 		{
-		IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
-		if (filterableComponent)
-		{
-			filterableComponent->Execute_OnThermalPhoto(Cast<UObject>(filterableComponent));
+			IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
+			if (filterableComponent)
+			{
+				filterableComponent->Execute_OnThermalPhoto(Cast<UObject>(filterableComponent));
+			}
 		}
-	}
 	}
 }
 void AFilterActor::OnThermalPhotoFinished_Implementation()
@@ -81,12 +81,12 @@ void AFilterActor::OnThermalPhotoFinished_Implementation()
 	{
 		if (IsValid(component))
 		{
-		IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
-		if (filterableComponent)
-		{
-			filterableComponent->Execute_OnThermalPhotoFinished(Cast<UObject>(filterableComponent));
+			IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
+			if (filterableComponent)
+			{
+				filterableComponent->Execute_OnThermalPhotoFinished(Cast<UObject>(filterableComponent));
+			}
 		}
-	}
 	}
 }
 
@@ -97,12 +97,12 @@ void AFilterActor::OnUVPhoto_Implementation()
 	{
 		if (IsValid(component))
 		{
-		IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
-		if (filterableComponent)
-		{
-			filterableComponent->Execute_OnUVPhoto(Cast<UObject>(filterableComponent));
+			IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
+			if (filterableComponent)
+			{
+				filterableComponent->Execute_OnUVPhoto(Cast<UObject>(filterableComponent));
+			}
 		}
-	}
 	}
 }
 void AFilterActor::OnUVPhotoFinished_Implementation()
@@ -111,12 +111,12 @@ void AFilterActor::OnUVPhotoFinished_Implementation()
 	{
 		if (IsValid(component))
 		{
-		IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
-		if (filterableComponent)
-		{
-			filterableComponent->Execute_OnUVPhotoFinished(Cast<UObject>(filterableComponent));
+			IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
+			if (filterableComponent)
+			{
+				filterableComponent->Execute_OnUVPhotoFinished(Cast<UObject>(filterableComponent));
+			}
 		}
-	}
 	}
 }
 
@@ -127,12 +127,12 @@ void AFilterActor::OnXrayPhoto_Implementation()
 	{
 		if (IsValid(component))
 		{
-		IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
-		if (filterableComponent)
-		{
-			filterableComponent->Execute_OnXrayPhoto(Cast<UObject>(filterableComponent));
+			IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
+			if (filterableComponent)
+			{
+				filterableComponent->Execute_OnXrayPhoto(Cast<UObject>(filterableComponent));
+			}
 		}
-	}
 	}
 }
 void AFilterActor::OnXrayPhotoFinished_Implementation()
@@ -141,11 +141,41 @@ void AFilterActor::OnXrayPhotoFinished_Implementation()
 	{
 		if (IsValid(component))
 		{
-		IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
-		if (filterableComponent)
-		{
-			filterableComponent->Execute_OnXrayPhotoFinished(Cast<UObject>(filterableComponent));
+			IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
+			if (filterableComponent)
+			{
+				filterableComponent->Execute_OnXrayPhotoFinished(Cast<UObject>(filterableComponent));
+			}
 		}
 	}
+}
+
+// Invis
+void AFilterActor::OnInvisPhoto_Implementation()
+{
+	for (UActorComponent *component : FilterableComponents)
+	{
+		if (IsValid(component))
+		{
+			IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
+			if (filterableComponent)
+			{
+				filterableComponent->Execute_OnInvisPhoto(Cast<UObject>(filterableComponent));
+			}
+		}
+	}
+}
+void AFilterActor::OnInvisPhotoFinished_Implementation()
+{
+	for (UActorComponent *component : FilterableComponents)
+	{
+		if (IsValid(component))
+		{
+			IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
+			if (filterableComponent)
+			{
+				filterableComponent->Execute_OnInvisPhotoFinished(Cast<UObject>(filterableComponent));
+			}
+		}
 	}
 }

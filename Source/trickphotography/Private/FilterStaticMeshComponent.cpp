@@ -14,6 +14,14 @@ void UFilterStaticMeshComponent::BeginPlay()
     HiddenDueToFilterSetting = false;
 
     DefaultMaterial = GetMaterial(0);
+
+    if (IsInvisible)
+    {
+        SetVisibility(false);
+        DefaultCollisionType = GetCollisionObjectType();
+        SetCollisionObjectType(ECollisionChannel::ECC_GameTraceChannel4);
+        SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel3, ECollisionResponse::ECR_Overlap);
+    }
 }
 
 // Any
@@ -27,6 +35,8 @@ void UFilterStaticMeshComponent::OnAnyPhotoFinished_Implementation()
 // Thermal
 void UFilterStaticMeshComponent::OnThermalPhoto_Implementation()
 {
+    if (IsInvisible)
+        return;
     switch (ThermalInteraction)
     {
     case FilterVisibility::Visible:
@@ -45,6 +55,8 @@ void UFilterStaticMeshComponent::OnThermalPhoto_Implementation()
 }
 void UFilterStaticMeshComponent::OnThermalPhotoFinished_Implementation()
 {
+    if (IsInvisible)
+        return;
     switch (ThermalInteraction)
     {
     case FilterVisibility::Visible:
@@ -65,6 +77,8 @@ void UFilterStaticMeshComponent::OnThermalPhotoFinished_Implementation()
 // UV
 void UFilterStaticMeshComponent::OnUVPhoto_Implementation()
 {
+    if (IsInvisible)
+        return;
     switch (UVInteraction)
     {
     case FilterVisibility::Visible:
@@ -79,6 +93,8 @@ void UFilterStaticMeshComponent::OnUVPhoto_Implementation()
 }
 void UFilterStaticMeshComponent::OnUVPhotoFinished_Implementation()
 {
+    if (IsInvisible)
+        return;
     switch (UVInteraction)
     {
     case FilterVisibility::Visible:
@@ -95,6 +111,8 @@ void UFilterStaticMeshComponent::OnUVPhotoFinished_Implementation()
 // X-Ray
 void UFilterStaticMeshComponent::OnXrayPhoto_Implementation()
 {
+    if (IsInvisible)
+        return;
     switch (XrayInteraction)
     {
     case FilterVisibility::Visible:
@@ -113,6 +131,8 @@ void UFilterStaticMeshComponent::OnXrayPhoto_Implementation()
 }
 void UFilterStaticMeshComponent::OnXrayPhotoFinished_Implementation()
 {
+    if (IsInvisible)
+        return;
     switch (XrayInteraction)
     {
     case FilterVisibility::Visible:
@@ -127,5 +147,45 @@ void UFilterStaticMeshComponent::OnXrayPhotoFinished_Implementation()
         break;
     default:
         break;
+    }
+}
+
+// Invisibility
+void UFilterStaticMeshComponent::OnInvisPhoto_Implementation()
+{
+    if (IsInvisible)
+    {
+        SetMaterial(0, InvisMaterial);
+        SetVisibility(true);
+    }
+}
+void UFilterStaticMeshComponent::OnInvisPhotoFinished_Implementation()
+{
+    if (IsInvisible)
+    {
+        SetMaterial(0, DefaultMaterial);
+        SetVisibility(false);
+    }
+}
+
+void UFilterStaticMeshComponent::RevealFromInvisibility()
+{
+    if (IsInvisible)
+    {
+        IsInvisible = false;
+        SetMaterial(0, DefaultMaterial);
+        SetVisibility(true);
+        SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+        SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel3, ECollisionResponse::ECR_Ignore);
+    }
+}
+void UFilterStaticMeshComponent::MakeInvisible()
+{
+    if (!IsInvisible)
+    {
+        IsInvisible = true;
+        SetVisibility(false);
+        SetCollisionEnabled(ECollisionEnabled::QueryOnly);
+        SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel3, ECollisionResponse::ECR_Overlap);
     }
 }
