@@ -42,6 +42,11 @@ public:
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Filter Interaction")
 	void OnXrayPhotoFinished();
 
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Filter Interaction")
+	void OnInvisPhoto();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Filter Interaction")
+	void OnInvisPhotoFinished();
+
 public:
 	FString GetInterfaceName();
 };

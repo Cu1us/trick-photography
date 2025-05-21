@@ -27,6 +27,7 @@ public:
 	virtual void BeginPlay() override;
 
 	UMaterialInterface *DefaultMaterial;
+	ECollisionChannel DefaultCollisionType;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Materials\|Thermal")
 	FilterVisibility ThermalInteraction;
@@ -43,6 +44,16 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Materials\|X-Ray")
 	UMaterialInterface *XrayMaterial;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Materials\|Invisibility")
+	bool IsInvisible;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Materials\|Invisibility")
+	UMaterialInterface *InvisMaterial;
+
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Reveal From Invisibility", Keywords = "Invisibility", Category = "Filter Interaction"))
+	void RevealFromInvisibility();
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Make Invisible", Keywords = "Invisibility", Category = "Filter Interaction"))
+	void MakeInvisible();
+
 	void OnAnyPhoto_Implementation() override;
 	void OnAnyPhotoFinished_Implementation() override;
 	void OnThermalPhoto_Implementation() override;
@@ -51,6 +62,8 @@ public:
 	void OnUVPhotoFinished_Implementation() override;
 	void OnXrayPhoto_Implementation() override;
 	void OnXrayPhotoFinished_Implementation() override;
+	void OnInvisPhoto_Implementation() override;
+	void OnInvisPhotoFinished_Implementation() override;
 
 private:
 	bool HiddenDueToFilterSetting;

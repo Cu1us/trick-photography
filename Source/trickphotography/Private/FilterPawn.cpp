@@ -106,3 +106,33 @@ void AFilterPawn::OnXrayPhotoFinished_Implementation()
 		}
 	}
 }
+
+// Invis
+void AFilterPawn::OnInvisPhoto_Implementation()
+{
+	for (UActorComponent *component : FilterableComponents)
+	{
+		if (IsValid(component))
+		{
+			IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
+			if (filterableComponent)
+			{
+				filterableComponent->Execute_OnInvisPhoto(Cast<UObject>(filterableComponent));
+			}
+		}
+	}
+}
+void AFilterPawn::OnInvisPhotoFinished_Implementation()
+{
+	for (UActorComponent *component : FilterableComponents)
+	{
+		if (IsValid(component))
+		{
+			IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
+			if (filterableComponent)
+			{
+				filterableComponent->Execute_OnInvisPhotoFinished(Cast<UObject>(filterableComponent));
+			}
+		}
+	}
+}

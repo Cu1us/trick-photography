@@ -48,4 +48,6 @@ public:
 	void OnUVPhotoFinished_Implementation() override;
 	void OnXrayPhoto_Implementation() override;
 	void OnXrayPhotoFinished_Implementation() override;
+	void OnInvisPhoto_Implementation() override;
+	void OnInvisPhotoFinished_Implementation() override;
 };
