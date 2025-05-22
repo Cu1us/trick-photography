@@ -179,3 +179,17 @@ void AFilterActor::OnInvisPhotoFinished_Implementation()
 		}
 	}
 }
+void AFilterActor::OnRevealFromInvisibility_Implementation()
+{
+	for (UActorComponent *component : FilterableComponents)
+	{
+		if (IsValid(component))
+		{
+			IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
+			if (filterableComponent)
+			{
+				filterableComponent->Execute_OnRevealFromInvisibility(Cast<UObject>(filterableComponent));
+			}
+		}
+	}
+}
