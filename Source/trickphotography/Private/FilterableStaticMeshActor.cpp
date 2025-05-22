@@ -19,6 +19,10 @@ void AFilterableStaticMeshActor::BeginPlay()
         DefaultCollisionType = GetStaticMeshComponent()->GetCollisionObjectType();
         GetStaticMeshComponent()->SetCollisionObjectType(ECollisionChannel::ECC_GameTraceChannel4);
         GetStaticMeshComponent()->SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel3, ECollisionResponse::ECR_Overlap);
+
+        GetStaticMeshComponent()->bRenderCustomDepth = true;
+        GetStaticMeshComponent()->CustomDepthStencilValue = 10;
+        GetStaticMeshComponent()->MarkRenderStateDirty();
     }
 }
 
@@ -176,6 +180,10 @@ void AFilterableStaticMeshActor::RevealFromInvisibility()
         GetStaticMeshComponent()->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
         GetStaticMeshComponent()->SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel3, ECollisionResponse::ECR_Ignore);
         GetStaticMeshComponent()->SetCollisionObjectType(DefaultCollisionType);
+
+        GetStaticMeshComponent()->bRenderCustomDepth = false;
+        GetStaticMeshComponent()->CustomDepthStencilValue = 0;
+        GetStaticMeshComponent()->MarkRenderStateDirty();
     }
 }
 void AFilterableStaticMeshActor::MakeInvisible()
@@ -188,5 +196,9 @@ void AFilterableStaticMeshActor::MakeInvisible()
         GetStaticMeshComponent()->SetCollisionObjectType(ECollisionChannel::ECC_GameTraceChannel4);
         GetStaticMeshComponent()->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
         GetStaticMeshComponent()->SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel3, ECollisionResponse::ECR_Overlap);
+
+        GetStaticMeshComponent()->bRenderCustomDepth = true;
+        GetStaticMeshComponent()->CustomDepthStencilValue = 10;
+        GetStaticMeshComponent()->MarkRenderStateDirty();
     }
 }

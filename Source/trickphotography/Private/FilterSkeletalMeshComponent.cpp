@@ -22,6 +22,10 @@ void UFilterSkeletalMeshComponent::BeginPlay()
         DefaultCollisionType = GetCollisionObjectType();
         SetCollisionObjectType(ECollisionChannel::ECC_GameTraceChannel4);
         SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel3, ECollisionResponse::ECR_Overlap);
+
+        bRenderCustomDepth = true;
+        CustomDepthStencilValue = 10;
+        MarkRenderStateDirty();
     }
 }
 
@@ -178,6 +182,10 @@ void UFilterSkeletalMeshComponent::RevealFromInvisibility()
         SetVisibility(true);
         SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
         SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel3, ECollisionResponse::ECR_Ignore);
+
+        bRenderCustomDepth = false;
+        CustomDepthStencilValue = 0;
+        MarkRenderStateDirty();
     }
 }
 void UFilterSkeletalMeshComponent::MakeInvisible()
@@ -188,5 +196,9 @@ void UFilterSkeletalMeshComponent::MakeInvisible()
         SetVisibility(false);
         SetCollisionEnabled(ECollisionEnabled::QueryOnly);
         SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel3, ECollisionResponse::ECR_Overlap);
+
+        bRenderCustomDepth = true;
+        CustomDepthStencilValue = 10;
+        MarkRenderStateDirty();
     }
 }
