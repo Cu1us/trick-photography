@@ -136,3 +136,17 @@ void AFilterPawn::OnInvisPhotoFinished_Implementation()
 		}
 	}
 }
+void AFilterPawn::OnRevealFromInvisibility_Implementation()
+{
+	for (UActorComponent *component : FilterableComponents)
+	{
+		if (IsValid(component))
+		{
+			IFilterableInterface *filterableComponent = Cast<IFilterableInterface>(component);
+			if (filterableComponent)
+			{
+				filterableComponent->Execute_OnRevealFromInvisibility(Cast<UObject>(filterableComponent));
+			}
+		}
+	}
+}

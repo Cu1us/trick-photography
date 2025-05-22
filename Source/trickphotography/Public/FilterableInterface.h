@@ -47,6 +47,9 @@ public:
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Filter Interaction")
 	void OnInvisPhotoFinished();
 
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Filter Interaction")
+	void OnRevealFromInvisibility();
+
 public:
 	FString GetInterfaceName();
 };

@@ -172,7 +172,7 @@ void UFilterStaticMeshComponent::OnInvisPhotoFinished_Implementation()
     }
 }
 
-void UFilterStaticMeshComponent::RevealFromInvisibility()
+void UFilterStaticMeshComponent::OnRevealFromInvisibility_Implementation()
 {
     if (IsInvisible)
     {

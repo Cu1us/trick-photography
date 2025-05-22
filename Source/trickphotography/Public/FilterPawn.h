@@ -33,4 +33,5 @@ public:
 	void OnXrayPhotoFinished_Implementation() override;
 	void OnInvisPhoto_Implementation() override;
 	void OnInvisPhotoFinished_Implementation() override;
+	void OnRevealFromInvisibility_Implementation() override;
 };

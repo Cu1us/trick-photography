@@ -49,8 +49,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Materials\|Invisibility")
 	UMaterialInterface *InvisMaterial;
 
-	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Reveal From Invisibility", Keywords = "Invisibility", Category = "Filter Interaction"))
-	void RevealFromInvisibility();
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Make Invisible", Keywords = "Invisibility", Category = "Filter Interaction"))
 	void MakeInvisible();
 
@@ -64,6 +62,7 @@ public:
 	void OnXrayPhotoFinished_Implementation() override;
 	void OnInvisPhoto_Implementation() override;
 	void OnInvisPhotoFinished_Implementation() override;
+	void OnRevealFromInvisibility_Implementation() override;
 
 private:
 	bool HiddenDueToFilterSetting;

@@ -170,7 +170,7 @@ void AFilterableStaticMeshActor::OnInvisPhotoFinished_Implementation()
     }
 }
 
-void AFilterableStaticMeshActor::RevealFromInvisibility()
+void AFilterableStaticMeshActor::OnRevealFromInvisibility_Implementation()
 {
     if (IsInvisible)
     {

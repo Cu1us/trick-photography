@@ -173,7 +173,7 @@ void UFilterSkeletalMeshComponent::OnInvisPhotoFinished_Implementation()
     }
 }
 
-void UFilterSkeletalMeshComponent::RevealFromInvisibility()
+void UFilterSkeletalMeshComponent::OnRevealFromInvisibility_Implementation()
 {
     if (IsInvisible)
     {
